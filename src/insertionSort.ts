@@ -1,11 +1,11 @@
 export function insertionSort(array: number[]) {
-  for (let i = 0; i < array.length - 1; i++) {
-    for (let j = i + 1; j < array.length; j++) {
-      if (array[i] > array[j]) {
-        const aux = array [i];
-        array[i] = array[j];
-        array[j] = aux;
-      }
+  for (let i = 0; i < array.length; i++) {
+    let j  = i;
+    while (j >= 0 && array[j]< array[j - 1]) {
+      const aux = array [j];
+      array[j] = array[j-1];
+      array[j-1] = aux;
+      j--;
     }
   }
   return array;
