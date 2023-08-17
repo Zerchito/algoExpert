@@ -1,12 +1,12 @@
 export function stableInternships(interns: number[][], teams: number[][]) {
-  let available = new Array(interns.length).fill(true);
-  let matchings = new Array(teams.length).fill(null);
+  const available = new Array(interns.length).fill(true);
+  const matchings = new Array(teams.length).fill(null);
   while(available.some(i => i)) {
     for (let intern = 0; intern < interns.length; intern++) {
       if(!available[intern]) {
         continue;
       }
-      let team: number = interns[intern].shift();
+      const team: number = interns[intern].shift();
       if (matchings[team] === null) {
         available[intern] = false;
         matchings[team] = intern;
